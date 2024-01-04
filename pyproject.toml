@@ -1,0 +1,32 @@
+[project]
+name = "py"
+dynamic = ["version"]
+description = "Template for python projects"
+authors = [
+    {name = "Arwichok", email = "arwichok@gmail.com"},
+]
+dependencies = []
+requires-python = ">=3.8"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+package-type = "library"
+
+[tool.pdm.version]
+source = "scm"
+
+[tool.pdm.scripts]
+_.env_file = ".env"
+start = "python -m py"
+
+[tool.pdm.dev-dependencies]
+test = [
+    "pytest>=7.4.4",
+    "pytest-asyncio>=0.23.3",
+]
